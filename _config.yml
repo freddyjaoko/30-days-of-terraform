@@ -1,10 +1,56 @@
-lsi: false
-safe: true
-source: _post
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+title: "Day 2 "
+description: "A technical blog documenting my DevOps and Cloud journey."
+author: "Fredrick Jaoko"
+
+# Build settings
+markdown: kramdown
+theme: minima  # You can change this to another theme if you want
+permalink: /:categories/:title/
+paginate: 5
+
+# Directory settings
+exclude:
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - scripts
+  - tmp
+  - secrets.txt
+
+include:
+  - _posts
+  - submissions
+  - _pages  # If you use a custom pages folder
+  - assets  # If you store diagrams or images here
+
+# Optional: Use baseurl if hosting from a subfolder (like GitHub Pages repo)
+# baseurl: "/my-blog"  # Uncomment and change if needed
+# url: "https://yourusername.github.io"  # Your site URL
+
+# Plugins (optional)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# GitHub Pages (safe settings)
+github:
+  is_project_page: true
+
+# Pagination settings
+paginate_path: "/page:num"
+
+# Social
+social_links:
+  github: freddyjaoko
+  linkedin: https://linkedin.com/in/fredrickjaoko
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Fredrick Jaoko"
