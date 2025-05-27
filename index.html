@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>How to Deploy a Plain HTML Site Using GitHub Pages</title>
+  <title>Day 2 Submission: Terraform Hands-on Labs and AWS Server Deployments</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,24 +11,34 @@
       margin: 2rem auto;
       padding: 0 1rem;
       line-height: 1.6;
-      color: #222;
       background: #f9f9f9;
+      color: #222;
     }
     h1, h2, h3 {
       color: #004080;
+      margin-top: 1.5rem;
     }
-    pre {
-      background: #eee;
-      padding: 1rem;
-      overflow-x: auto;
-      border-radius: 5px;
+    ul, ol {
+      margin-left: 2rem;
+      margin-bottom: 1rem;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 2rem;
+    }
+    table, th, td {
       border: 1px solid #ccc;
     }
-    code {
-      font-family: Consolas, monospace;
-      background: #f3f3f3;
-      padding: 0.2rem 0.4rem;
-      border-radius: 3px;
+    th, td {
+      padding: 0.5rem 1rem;
+      text-align: left;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 2rem 0;
     }
     a {
       color: #0066cc;
@@ -37,129 +47,129 @@
     a:hover {
       text-decoration: underline;
     }
-    ul {
-      list-style-type: disc;
-      margin-left: 2rem;
-    }
   </style>
 </head>
 <body>
   <article>
-    <h1>How to Deploy a Plain HTML Site Using GitHub Pages</h1>
+    <h1>Day 2 Submission: Terraform Hands-on Labs and AWS Server Deployments</h1>
 
-    <p>GitHub Pages is an excellent way to host static websites for free — no servers, no fuss, just push your files and your site is live!</p>
-
-    <p>In this post, I’ll walk you through how to deploy a <strong>plain HTML page</strong> on GitHub Pages, ideal for simple portfolios, project pages, or blogs without a CMS.</p>
+    <p>Today marks the completion of my Day 2 tasks as part of my Terraform learning journey. I focused on reading Chapter 2 of <em>Terraform: Up & Running</em>, completing the required hands-on labs, deploying two types of AWS servers using Terraform, and creating architecture diagrams to document my infrastructure.</p>
 
     <hr />
 
-    <h2>Why GitHub Pages?</h2>
-    <ul>
-      <li><strong>Free hosting</strong> directly from your GitHub repo</li>
-      <li>Supports <strong>custom domains</strong></li>
-      <li>Automatically publishes your site on every push</li>
-      <li>Supports Jekyll for static site generation (optional)</li>
-      <li>Great for tech blogs, documentation, portfolios, and project demos</li>
-    </ul>
+    <section>
+      <h2>Personal Information</h2>
+      <ul>
+        <li><strong>Name:</strong> Fredrick Jaoko</li>
+        <li><strong>Date:</strong> 27/05/25</li>
+        <li><strong>GitHub Username:</strong> freddyjaoko</li>
+      </ul>
+    </section>
 
     <hr />
 
-    <h2>Step 1: Create Your GitHub Repository</h2>
-    <p>First, create a new repo on GitHub:</p>
-    <ol>
-      <li>Go to <a href="https://github.com/new" target="_blank" rel="noopener noreferrer">https://github.com/new</a></li>
-      <li>Name your repo (e.g., <code>my-html-site</code>)</li>
-      <li>Optionally add a README (you can edit later)</li>
-      <li>Click <strong>Create repository</strong></li>
-    </ol>
+    <section>
+      <h2>Task Summary and Progress</h2>
+      <ul>
+        <li>Read Chapter 2 of <em>Terraform: Up & Running</em></li>
+        <li>Completed Required Hands-on Labs</li>
+        <li>Deployed Single Server</li>
+        <li>Deployed Web Server</li>
+        <li>Created Infrastructure Diagrams</li>
+      </ul>
+    </section>
 
     <hr />
 
-    <h2>Step 2: Clone Your Repo Locally</h2>
-    <p>Open your terminal and clone the repo to your machine:</p>
-    <pre><code>git clone https://github.com/yourusername/my-html-site.git
-cd my-html-site
-</code></pre>
+    <section>
+      <h2>Infrastructure Deployments</h2>
+
+      <h3>Single Server Deployment</h3>
+      <ul>
+        <li><strong>Region:</strong> us-east-1</li>
+        <li><strong>Instance Type:</strong> t2.micro</li>
+        <li><strong>Key Features:</strong> Security group allowing ingress on port 22 (SSH)</li>
+      </ul>
+      <p>This deployment helped me understand the basics of provisioning a simple server in AWS using Terraform, including managing security groups and instance configuration.</p>
+
+      <h3>Web Server Deployment</h3>
+      <ul>
+        <li><strong>Region:</strong> us-east-1</li>
+        <li><strong>Instance Type:</strong> t2.micro</li>
+        <li><strong>Key Features:</strong> Security group allowing ingress on port 80 (HTTP)</li>
+      </ul>
+      <p>This allowed me to practice setting up a publicly accessible web server, making sure port 80 was open to receive web traffic.</p>
+    </section>
 
     <hr />
 
-    <h2>Step 3: Add Your HTML File</h2>
-    <p>Create an <code>index.html</code> file in your repo folder. This will be the homepage of your site.</p>
-    <p>Example <code>index.html</code> content:</p>
-    <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8" /&gt;
-  &lt;title&gt;My Simple HTML Site&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Welcome to My Static Site!&lt;/h1&gt;
-  &lt;p&gt;This site is deployed using GitHub Pages.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-    <p>Save the file inside your repo directory.</p>
+    <section>
+      <h2>Challenges and Solutions</h2>
+      <p>One challenge I encountered was managing AWS key pairs. Initially, I struggled with Terraform failing to locate or properly use my SSH key. To fix this, I manually imported my public key into AWS through the console, then referenced the existing key pair in my Terraform configuration instead of trying to create one automatically.</p>
+      <p>This taught me the importance of managing external resources carefully and how to work around Terraform’s limitations with AWS key management.</p>
+    </section>
 
     <hr />
 
-    <h2>Step 4: Commit and Push Your Changes</h2>
-    <p>Add your new file and push it to GitHub:</p>
-    <pre><code>git add index.html
-git commit -m "Add homepage"
-git push origin main
-</code></pre>
+    <section>
+      <h2>Additional Resources</h2>
+      <p>Official <a href="https://www.terraform.io/docs" target="_blank" rel="noopener noreferrer">Terraform Documentation</a> was invaluable for troubleshooting and learning best practices.</p>
+    </section>
 
     <hr />
 
-    <h2>Step 5: Enable GitHub Pages</h2>
-    <ol>
-      <li>On GitHub, go to your repository’s <strong>Settings</strong> tab</li>
-      <li>Select <strong>Pages</strong> from the sidebar</li>
-      <li>Under <strong>Source</strong>, select the branch (<code>main</code>) and the folder (<code>/root</code> or <code>/docs</code> if you placed your site files there)</li>
-      <li>Click <strong>Save</strong></li>
-    </ol>
-    <p>GitHub will build and deploy your site in a few minutes.</p>
+    <section>
+      <h2>Time Tracking</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Activity</th>
+            <th>Time Spent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Reading</td><td>1 hour</td></tr>
+          <tr><td>Infrastructure Deployment</td><td>1 hour</td></tr>
+          <tr><td>Diagram Creation</td><td>0.5 hours</td></tr>
+          <tr><td>Blog Writing</td><td>0.5 hours</td></tr>
+          <tr><td><strong>Total</strong></td><td><strong>3 hours</strong></td></tr>
+        </tbody>
+      </table>
+    </section>
 
     <hr />
 
-    <h2>Step 6: Visit Your Live Site</h2>
-    <p>Your site will be available at:</p>
-    <p><code>https://yourusername.github.io/my-html-site/</code></p>
-    <p>If you named your homepage <code>index.html</code>, it will load automatically.</p>
+    <section>
+      <h2>Repository Structure</h2>
+      <pre>
+Day2/
+└── Submissions/
+    └── freddyjaoko/
+        ├── architecture/
+        │   ├── single-server.png
+        │   └── web-server.png
+        ├── terraform/
+        │   ├── single-server/
+        │   │   └── main.tf
+        │   └── web-server/
+        │       └── main.tf
+        └── submission.md
+      </pre>
+    </section>
 
     <hr />
 
-    <h2>Tips for Managing Your GitHub Pages Site</h2>
-    <ul>
-      <li><strong>Use folders for assets:</strong> Store images, CSS, and JS files in folders like <code>/assets</code> or <code>/static</code> to keep your repo organized.</li>
-      <li><strong>Relative paths:</strong> Use relative links for your assets to avoid broken references.</li>
-      <li><strong>Custom domain:</strong> You can add a custom domain in the Pages settings and include a <code>CNAME</code> file in your repo.</li>
-      <li><strong>Jekyll integration:</strong> If you want dynamic content, you can enable Jekyll by adding <code>_config.yml</code> and markdown files.</li>
-      <li><strong>Ignore files:</strong> Use <code>.gitignore</code> and <code>_config.yml</code> exclude/include rules to manage what gets deployed.</li>
-    </ul>
+    <section>
+      <h2>Blog Post & Social Media</h2>
+      <ul>
+        <li><strong>Title:</strong> Day 2 Submission</li>
+        <li><strong>Link:</strong> <a href="https://freddyjaoko.github.io/tf-day2/" target="_blank" rel="noopener noreferrer">https://freddyjaoko.github.io/tf-day2/</a></li>
+        <li><strong>Platform:</strong> LinkedIn</li>
+        <li><strong>Post Link:</strong> [URL to your social media post]</li>
+      </ul>
+    </section>
 
-    <hr />
-
-    <h2>Common Pitfalls to Avoid</h2>
-    <ul>
-      <li><strong>Not naming your homepage <code>index.html</code>:</strong> Browsers look for <code>index.html</code> by default.</li>
-      <li><strong>Using absolute URLs for assets:</strong> This can break your site if deployed under a subpath.</li>
-      <li><strong>Placing site files in wrong folder:</strong> Make sure you select the right source folder for GitHub Pages in settings.</li>
-      <li><strong>Ignoring cache:</strong> GitHub Pages may cache your site for a few minutes after updates.</li>
-    </ul>
-
-    <hr />
-
-    <h2>Conclusion</h2>
-    <p>Deploying a static HTML site with GitHub Pages is straightforward, reliable, and free. Whether you want to showcase your projects, write a simple blog, or share documentation, GitHub Pages makes it easy to get your content online with minimal fuss.</p>
-    <p>Feel free to ask any questions or share your GitHub Pages links in the comments!</p>
-
-    <hr />
-
-    <h2>About Me</h2>
-    <p>I’m Fredrick Jaoko, a cloud enthusiast and DevOps engineer documenting my learning journey. Follow me on <a href="https://github.com/freddyjaoko" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="https://linkedin.com/in/freddyjaoko" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
-
-    <p><strong>Happy coding!</strong></p>
   </article>
 </body>
 </html>
+
