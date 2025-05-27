@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Day 2 Submission – Fredrick Jaoko</title>
+  <title>How to Deploy a Plain HTML Site Using GitHub Pages</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -45,38 +45,121 @@
 </head>
 <body>
   <article>
-    <h1>Day 2 Submission</h1>
+    <h1>How to Deploy a Plain HTML Site Using GitHub Pages</h1>
 
-    <section>
-      <h2>Personal Information</h2>
-      <ul>
-        <li><strong>Name:</strong> Fredrick Jaoko</li>
-        <li><strong>Date:</strong> 27/05/25</li>
-        <li><strong>GitHub Username:</strong> <a href="https://github.com/freddyjaoko" target="_blank" rel="noopener noreferrer">freddyjaoko</a></li>
-      </ul>
-    </section>
+    <p>GitHub Pages is an excellent way to host static websites for free — no servers, no fuss, just push your files and your site is live!</p>
 
-    <section>
-      <h2>Task Completion</h2>
-      <ul>
-        <li><input type="checkbox" disabled> Read Chapter 2 of "Terraform: Up &amp; Running"</li>
-        <li><input type="checkbox" disabled> Completed Required Hands-on Labs</li>
-        <li><input type="checkbox" disabled> Deployed Single Server</li>
-        <li><input type="checkbox" disabled> Deployed Web Server</li>
-        <li><input type="checkbox" disabled> Created Infrastructure Diagrams</li>
-      </ul>
-    </section>
+    <p>In this post, I’ll walk you through how to deploy a <strong>plain HTML page</strong> on GitHub Pages, ideal for simple portfolios, project pages, or blogs without a CMS.</p>
 
-    <section>
-      <h2>Infrastructure Details</h2>
+    <hr />
 
-      <h3>Single Server Deployment</h3>
-      <ul>
-        <li><strong>Region:</strong> us-east-1</li>
-        <li><strong>Instance Type:</strong> t2.micro</li>
-        <li><strong>Key Features:</strong> ingress on port 22</li>
-      </ul>
+    <h2>Why GitHub Pages?</h2>
+    <ul>
+      <li><strong>Free hosting</strong> directly from your GitHub repo</li>
+      <li>Supports <strong>custom domains</strong></li>
+      <li>Automatically publishes your site on every push</li>
+      <li>Supports Jekyll for static site generation (optional)</li>
+      <li>Great for tech blogs, documentation, portfolios, and project demos</li>
+    </ul>
 
-      <h3>Web Server Deployment</h3>
-      <ul>
-        <li><strong>Region:</strong> us-east-1</li>
+    <hr />
+
+    <h2>Step 1: Create Your GitHub Repository</h2>
+    <p>First, create a new repo on GitHub:</p>
+    <ol>
+      <li>Go to <a href="https://github.com/new" target="_blank" rel="noopener noreferrer">https://github.com/new</a></li>
+      <li>Name your repo (e.g., <code>my-html-site</code>)</li>
+      <li>Optionally add a README (you can edit later)</li>
+      <li>Click <strong>Create repository</strong></li>
+    </ol>
+
+    <hr />
+
+    <h2>Step 2: Clone Your Repo Locally</h2>
+    <p>Open your terminal and clone the repo to your machine:</p>
+    <pre><code>git clone https://github.com/yourusername/my-html-site.git
+cd my-html-site
+</code></pre>
+
+    <hr />
+
+    <h2>Step 3: Add Your HTML File</h2>
+    <p>Create an <code>index.html</code> file in your repo folder. This will be the homepage of your site.</p>
+    <p>Example <code>index.html</code> content:</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;title&gt;My Simple HTML Site&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Welcome to My Static Site!&lt;/h1&gt;
+  &lt;p&gt;This site is deployed using GitHub Pages.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <p>Save the file inside your repo directory.</p>
+
+    <hr />
+
+    <h2>Step 4: Commit and Push Your Changes</h2>
+    <p>Add your new file and push it to GitHub:</p>
+    <pre><code>git add index.html
+git commit -m "Add homepage"
+git push origin main
+</code></pre>
+
+    <hr />
+
+    <h2>Step 5: Enable GitHub Pages</h2>
+    <ol>
+      <li>On GitHub, go to your repository’s <strong>Settings</strong> tab</li>
+      <li>Select <strong>Pages</strong> from the sidebar</li>
+      <li>Under <strong>Source</strong>, select the branch (<code>main</code>) and the folder (<code>/root</code> or <code>/docs</code> if you placed your site files there)</li>
+      <li>Click <strong>Save</strong></li>
+    </ol>
+    <p>GitHub will build and deploy your site in a few minutes.</p>
+
+    <hr />
+
+    <h2>Step 6: Visit Your Live Site</h2>
+    <p>Your site will be available at:</p>
+    <p><code>https://yourusername.github.io/my-html-site/</code></p>
+    <p>If you named your homepage <code>index.html</code>, it will load automatically.</p>
+
+    <hr />
+
+    <h2>Tips for Managing Your GitHub Pages Site</h2>
+    <ul>
+      <li><strong>Use folders for assets:</strong> Store images, CSS, and JS files in folders like <code>/assets</code> or <code>/static</code> to keep your repo organized.</li>
+      <li><strong>Relative paths:</strong> Use relative links for your assets to avoid broken references.</li>
+      <li><strong>Custom domain:</strong> You can add a custom domain in the Pages settings and include a <code>CNAME</code> file in your repo.</li>
+      <li><strong>Jekyll integration:</strong> If you want dynamic content, you can enable Jekyll by adding <code>_config.yml</code> and markdown files.</li>
+      <li><strong>Ignore files:</strong> Use <code>.gitignore</code> and <code>_config.yml</code> exclude/include rules to manage what gets deployed.</li>
+    </ul>
+
+    <hr />
+
+    <h2>Common Pitfalls to Avoid</h2>
+    <ul>
+      <li><strong>Not naming your homepage <code>index.html</code>:</strong> Browsers look for <code>index.html</code> by default.</li>
+      <li><strong>Using absolute URLs for assets:</strong> This can break your site if deployed under a subpath.</li>
+      <li><strong>Placing site files in wrong folder:</strong> Make sure you select the right source folder for GitHub Pages in settings.</li>
+      <li><strong>Ignoring cache:</strong> GitHub Pages may cache your site for a few minutes after updates.</li>
+    </ul>
+
+    <hr />
+
+    <h2>Conclusion</h2>
+    <p>Deploying a static HTML site with GitHub Pages is straightforward, reliable, and free. Whether you want to showcase your projects, write a simple blog, or share documentation, GitHub Pages makes it easy to get your content online with minimal fuss.</p>
+    <p>Feel free to ask any questions or share your GitHub Pages links in the comments!</p>
+
+    <hr />
+
+    <h2>About Me</h2>
+    <p>I’m Fredrick Jaoko, a cloud enthusiast and DevOps engineer documenting my learning journey. Follow me on <a href="https://github.com/freddyjaoko" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="https://linkedin.com/in/freddyjaoko" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+
+    <p><strong>Happy coding!</strong></p>
+  </article>
+</body>
+</html>
